@@ -74,11 +74,11 @@ Here are some of the key projects I've worked on, showcasing my practical applic
 This repository contains the source code for my personal introduction page:
 
 o_karimi.io/
-├── index.html          # The main content of the website
-├── assets/             # Directory for static assets
-│   ├── css/            # Stylesheets
-│   │   └── style.css   # Main CSS file
-│   └── img/            # Images used on the website
+├── index.html          # The main content of the website  
+├── assets/             # Directory for static assets  
+│   ├── css/            # Stylesheets  
+│   │   └── style.css   # Main CSS file  
+│   └── img/            # Images used on the website  
 └── README.md           # This file
 
 ## How to View
@@ -90,9 +90,9 @@ You can view the live version of this personal introduction page directly via Gi
 
 I'm always open to discussing new opportunities, collaborations, or simply connecting with fellow developers. Feel free to reach out!
 
-* **Email:** \[Your Email Address\] (e.g., `omid.karimi@example.com`)
+* **Email:** \[Your Email Address\](omidkarimi54@gmail.com)
 
-* **LinkedIn:** \[Your LinkedIn Profile URL\]
+* **LinkedIn:** [\[Your LinkedIn Profile URL\]](https://www.linkedin.com/in/o-karimi/)
 
 * **GitHub:** [https://github.com/O-Karimi](https://www.google.com/search?q=https://github.com/O-Karimi)
 
