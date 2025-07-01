@@ -90,9 +90,9 @@ You can view the live version of this personal introduction page directly via Gi
 
 I'm always open to discussing new opportunities, collaborations, or simply connecting with fellow developers. Feel free to reach out!
 
-* **Email:** \[Your Email Address\](omidkarimi54@gmail.com)
+* **Email:** [omidkarimi54@gmail.com](omidkarimi54@gmail.com)
 
-* **LinkedIn:** [\[Your LinkedIn Profile URL\]](https://www.linkedin.com/in/o-karimi/)
+* **LinkedIn:** [Omid Karimi](https://www.linkedin.com/in/o-karimi/)
 
 * **GitHub:** [https://github.com/O-Karimi](https://www.google.com/search?q=https://github.com/O-Karimi)
 
