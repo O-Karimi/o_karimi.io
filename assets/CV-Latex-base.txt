@@ -1,0 +1,411 @@
+%
+%Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar
+% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+% License: MIT
+%
+% For errors, suggestions, or improvements, please contact:
+% Email: pavankumard.pg19.ma@nitp.ac.in
+%
+
+
+
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}}
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Omid Karimi}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    +49-165-7570745 | \href{mailto:omidkarimi54@gmail.com}{omidkarimi54@gmail.com}
+    }
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/o-karimi/}{Omid Karimi} |
+    \socialicon{\faGithub} \href{https://github.com/O-Karimi}{O-Karimi}
+    }
+\end{center}
+\vspace{-6mm}
+\begin{center}
+    \small{Berlin, Berlin - 13347, Germany}
+\end{center}
+
+\vspace{-4mm}
+
+\section{\textbf{Overview}}
+\vspace{1mm}
+\justifying
+\small{
+Software engineer with mechanical engineering background and Python/Django development experience. Proven track record in backend development, computational modeling, and cross-disciplinary problem solving}
+\vspace{-2mm}
+
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Gisma University of Applied Sciences}{Berlin, Germany}
+{Bachelor's in Computer Sciences}{October 2024 - Currently}
+\resumeItemListStart
+\item Current Average Grade: 95.4/100
+\resumeItemListEnd
+
+\resumeSubheading
+{Sharif University of Technology - SUT}{Tehran, Iran}
+{Master's in Mechanical Engineering in Applied Design field}{September 2020 - March 2024}
+\resumeItemListStart
+\item CGPA: 14.76/20
+\resumeItemListEnd
+
+\resumeSubheading
+{Iran University of Science and Technology - IUST}{Tehran, Iran}
+{Bachelor's of Science in Mechanical Engineering}{September 2015 - September 2020}
+\resumeItemListStart
+\item Current Average Grade: 15.26/20
+\resumeItemListEnd
+
+\resumeSubheading
+{Allame Helli Pre-University}{Tehran, Iran}
+{Pre-University Certificate in Mathematics }{October 2014 - June 2015}
+\resumeItemListStart
+\item GPA: 17.76/20
+\resumeItemListEnd
+
+\resumeSubheading
+{Allame Helli High school}{Tehran, Iran}
+{High school Diploma in Mathematics and Physics}{October 2011 - June 2014}
+\resumeItemListStart
+\item CGPA: 19.14/20
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+
+\section{\textbf{Experience}}
+\vspace{-0.4mm}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {{Shopino}}{Tehran, Iran}
+      {Python - Backend Developer}{August 2022 - July 2024}
+      \resumeItemListStart
+        \item Developed and maintained backend systems for company projects using Django
+framework
+        \item  Collaborated with cross-functional teams to design, implement, and optimize software solutions
+        \item Contributed to the development of scalable and secure applications
+        \item Actively participated in team meetings, offering valuable insights and solutions
+      \resumeItemListEnd
+  \resumeSubheading
+      {{NODET Schools}}{Tehran, Iran}
+      {Physics and Simulation Teacher}{June 2016 - June 2022}
+      \resumeItemListStart
+        \item  Implemented different methods of teaching like using animations to explain physics concepts
+        \item  Designed new curriculum plans for physics and computational physics, including advanced physics topics
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-6mm}
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Book club Telegram bot: A Book club management Bot}
+  {Tools: Python, MySQL}
+  {September 2023 - December 2023}
+  {}
+\resumeItemListStart
+  \item Unifying previously scattered data base
+  \item Implemented group management,  members management and events notification
+\resumeItemListEnd
+
+\resumeProject
+  {Ducted Fan: Implementing ducted fan technology for drones}
+  {Tools: Abaqus, Catia, Ansys, Matlab, Arduino}
+  {September 2016 - September 2017}
+  {}
+\resumeItemListStart
+  \item Designing a new type of drone with one propeller
+  \item Implementing innovative movement system
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{\textbf{Skills}}
+\vspace{-0.4mm}
+ \resumeHeadingSkillStart
+  \resumeSubItem{Programming Languages:}
+    {Python, C++}
+  \resumeSubItem{Web Technologies:}
+    {HTML5, CSS3, Django REST Framework, FastAPI, JSON}
+  \resumeSubItem{Database Systems:}
+    {MySQL, SQLite}
+  \resumeSubItem{Cloud Technologies:}
+    {Heroku, AWS (basic)}
+  \resumeSubItem{DevOps \& Version Control:}
+    {Git, GitHub, Docker (basic), GitLab, CI/CD pipelines (conceptual)}
+  \resumeSubItem{Specialized Area:}
+    {Finite Element Analysis (FEA), Robotics Simulation, Sensor Integration, Control Systems}
+  \resumeSubItem{Mathematical \& Statistical Tools:}
+    {MATLAB, SciPy, Excel, LaTeX}
+  \resumeSubItem{Other Tools \& Technologies:}
+    {VS Code, Linux/Unix, Postman}
+  \resumeSubItem{Research Skills:}{Scientific writing, Literature review, Experimental design, Technical documentation, Numerical modeling, Academic presentations}
+ \resumeHeadingSkillEnd
+
+\section{\textbf{Honors and Awards}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Among the top 0.2\% in Master's university entrance exam}
+  {Iran's National Education Assessment Organization}
+  {June 2020}
+  {}
+\resumeItemListStart
+  \item Ranking in between 8 and 24 in different sub-fields of mechanical engineering out of 8000+ participants
+\resumeItemListEnd
+
+\resumeProject
+  {Among the top 0.9\% in Bachelor's university entrance exam}
+  {Iran's National Education Assessment Organization}
+  {June 2015}
+  {}
+\resumeItemListStart
+  \item Ranking in between 1510 in Mathematic and Physics out of 167000+ participants
+\resumeItemListEnd
+
+\resumeProject
+  {Best Presentation and Meritorious Award for Best Use of Tools}
+  {Iranian Physics Society student's competition}
+  {September 2013}
+  {}
+\resumeItemListStart
+  \item The award was for virtual lab project with computational modeling
+  \item With this modelings I could simulate rotational movements without using rotational dynamic formulas
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-6mm}
+\section{\textbf{Leadership Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumeProject
+  {Leader of the Competitions Section of SSME}
+  {Mechanical Engineering department of Iran University of Science and Technology}
+  {May 2017 - May 2018}
+  {}
+\resumeItemListStart
+  \item Developed ideas to designing competitions
+  \item Managing competitions, Scheduling and providing resources for each competition
+  \item Holding more than 5 competitions in a year from university level to the national level
+\resumeItemListEnd
+
+\resumeProject
+  {Ducted Fan Project Leader}
+  {Independently working with Professor Mohammadi}
+  {October 2016 - October 2017}
+  {}
+\resumeItemListStart
+  \item Providing resources for the project
+  \item Leading design of the ducted fan
+  \item Acted as liaison between team, professor and the university
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-6mm}
+
+\section{\textbf{Additional Information}}
+\vspace{-0.4mm}
+\small{
+\resumeItemListStart
+\item \textbf{Languages:} English (C1), Persian (Native), German (A2), Turkish (A1)
+\item \textbf{Interests:} Game Design, Sports, Algorithms
+\resumeItemListEnd
+}
+\vspace{-4mm}
+
+
+\section{\textbf{References}}
+\vspace{-0.2mm}
+\small{
+\begin{enumerate}[leftmargin=*,labelsep=2mm]
+\item \textbf{Dr. Narjes Nikzad Khasmakhi}\\
+   Professor, Computer Science Department\\
+   Gisma University of Applied Sciences\\
+   Email: narjes.nikzad@gisma-education.com\\
+   \textit{Relationship: Teacher at Gisma university}
+
+\item \textbf{Dr. Siavash Kazemirad}\\
+   Assistant Professor, School of Mechanical Engineering\\
+   Iran University of Science and Technology\\
+   Email: skazemirad@iust.ac.ir\\
+   Phone: +98-21-77240540 Ex: 8923\\
+   \textit{Relationship: Bachelor's thesis professor}
+
+\item \textbf{Dr. Bijan Mohammadi}\\
+   Full Professor, School of Mechanical Engineering\\
+   Iran University of Science and Technology\\
+   Email: bijan\_mohammadi@iust.ac.ir\\
+   Phone: +98-21-77240540 Ex: 2967\\
+   \textit{Relationship: Ducted Fan project supervisor}
+\end{enumerate}
+}
+
+\end{document}
